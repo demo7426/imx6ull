@@ -1,10 +1,10 @@
 CROSS_COMPILE ?= arm-linux-gnueabihf-
 ARCH ?= arm
 
-src_c_name ?= char_dev_app
+src_c_name ?= char_dev_base_app
 
 ifneq ($(KERNELRELEASE),)
-	obj-m := char_dev.o
+	obj-m := char_dev_base.o
 else
 	KERNELDIR ?= /home/qianrui/IMX6ULL/SystemPorting/linux-imx-rel_imx_4.1.15_2.1.0_ga_alientek
 	PWD := $(shell pwd)

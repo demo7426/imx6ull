@@ -22,7 +22,7 @@ Copyright (C), 2026-2040    , Hang Zhou Chang Chuan Co., Ltd.
 #include <sys/types.h>
 #include <sys/stat.h>
 
-#define CHAR_DEV_NAME "/dev/char_dev" // 设备名
+#define CHAR_DEV_NAME "/dev/char_dev_base" // 设备名
 
 int main(void)
 {
