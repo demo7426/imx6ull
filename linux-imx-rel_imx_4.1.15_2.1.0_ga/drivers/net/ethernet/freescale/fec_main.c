@@ -3353,6 +3353,7 @@ static void fec_reset_phy(struct platform_device *pdev)
 	}
 	msleep(msec);
 	gpio_set_value(phy_reset, 1);
+	msleep(200); /* 复位结束后至少再延时 150ms 才能继续操作 SR8201F */
 }
 #else /* CONFIG_OF */
 static void fec_reset_phy(struct platform_device *pdev)
