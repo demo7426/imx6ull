@@ -54,6 +54,16 @@
 		status = "okay";
 	};
 
+	beep{
+		#address-cells = <1>;
+		#size-cells = <1>;
+		compatible = "atkalpha-beep";
+		pinctrl_names = "default";
+		pinctrl-0 = <&pinctrl_beep>;
+		beep-gpio = <&gpio5 1 GPIO_ACTIVE_HIGH>;
+		status = "okay";
+	};
+
 	alphaled {
 		#address-cells = <1>;
 		#size-cells = <1>;
@@ -317,6 +327,12 @@
 	pinctrl-names = "default";
 	pinctrl-0 = <&pinctrl_hog_1>;
 	imx6ul-evk {
+		pinctrl_beep: beepgrp{
+			fsl,pins = <
+				MX6UL_PAD_SNVS_TAMPER1__GPIO5_IO01 0x10B0	/* beep */
+			>;
+		};
+
 		pinctrl_led: ledgrp{
 			fsl,pins  = <
 				MX6UL_PAD_GPIO1_IO03__GPIO1_IO03	0x10B0 /* LED0 */
